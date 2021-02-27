@@ -9,7 +9,7 @@
 Summary:	Provides useful locks
 Name:		python-%{pypi_name}
 Version:	0.14.1
-Release:	4
+Release:	5
 License:	Apache v2.0
 Group:		Libraries/Python
 Source0:	https://pypi.python.org/packages/f4/6f/41b835c9bf69b03615630f8a6f6d45dafbec95eb4e2bb816638f043552b2/fasteners-%{version}.tar.gz
