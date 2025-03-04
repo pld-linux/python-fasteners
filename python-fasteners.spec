@@ -1,19 +1,20 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 %bcond_without	python2 # CPython 2.x module
-%bcond_without	python3 # CPython 3.x module
+%bcond_with		python3 # CPython 3.x module
 
 %define		module		fasteners
 %define		egg_name	fasteners
 %define		pypi_name	fasteners
 Summary:	Provides useful locks
 Name:		python-%{pypi_name}
-Version:	0.14.1
-Release:	8
+# 0.16.2 - latest with python2 support
+Version:	0.16.2
+Release:	1
 License:	Apache v2.0
 Group:		Libraries/Python
-Source0:	https://pypi.python.org/packages/f4/6f/41b835c9bf69b03615630f8a6f6d45dafbec95eb4e2bb816638f043552b2/fasteners-%{version}.tar.gz
-# Source0-md5:	fcb13261c9b0039d9b1c4feb9bc75e04
+Source0:	https://pypi.debian.net/fasteners/fasteners-%{version}.tar.gz
+# Source0-md5:	dcc86737f47f7e8da4ec21f466fe90dd
 URL:		https://pypi.python.org/pypi/fasteners
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -78,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README.rst
+%doc ChangeLog README.md
 %{py_sitescriptdir}/%{module}
 %{py_sitescriptdir}/%{egg_name}-%{version}-py*.egg-info
 %endif
@@ -86,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%doc ChangeLog README.rst
+%doc ChangeLog README.md
 %{py3_sitescriptdir}/%{module}
 %{py3_sitescriptdir}/%{egg_name}-%{version}-py*.egg-info
 %endif
