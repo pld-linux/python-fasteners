@@ -10,7 +10,7 @@ Summary:	Provides useful locks
 Name:		python-%{pypi_name}
 # 0.16.2 - latest with python2 support
 Version:	0.16.2
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/fasteners/fasteners-%{version}.tar.gz
